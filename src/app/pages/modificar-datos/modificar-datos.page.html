@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">
+        <ion-icon name="arrow-back-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="profile-icon-section">
+      <ion-col size="12" class="ion-text-center">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-col>
+      <ion-item lines="none" class="ion-text-center title-item">
+        <ion-label class="ion-text-center">Ingrese los nuevos datos </ion-label>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="form-section">
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
+          <ion-input label="Correo Electronico" labelPlacement="floating" [(ngModel)]="mdl_correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="mdl_contrasena" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="school-outline"></ion-icon>
+          <ion-input label="Carrera" labelPlacement="floating" [(ngModel)]="mdl_carrera"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="cambioDatos()">
+          <ion-icon slot="start" name="refresh-outline"></ion-icon>
+          ACTUALIZAR
+         </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center footer-icon">
+        <img src="assets/icon/logo.png" alt="logo">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-toast
+  [isOpen]="isToastOpen"
+  [message]="mensaje"
+  [duration]="2000"
+  (didDismiss)="setOpen(false)"
+></ion-toast>
+
+</ion-content>

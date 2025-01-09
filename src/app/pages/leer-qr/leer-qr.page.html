@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>leerQR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-button (click)="leerQR()">Leer</ion-button>
+
+<ion-card *ngFor="let asignatura of listaAsistencias">
+
+  <ion-item>
+    <ion-icon name="home-outline" slot="start"></ion-icon>
+    <ion-label>Sigla: {{asignatura.sigla}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="compass-outline" slot="start"></ion-icon>
+    <ion-label>Nombre Asignatura: {{asignatura.nombre}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
+    <ion-label>Clases Presentes: {{asignatura.presente}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="time-outline" slot="start"></ion-icon>
+    <ion-label>Clases Ausentes: {{asignatura.ausente}}</ion-label>
+  </ion-item>
+</ion-card>
+
+</ion-content>

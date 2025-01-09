@@ -1,0 +1,42 @@
+.fondo {
+  --background: #ffffff;
+}
+
+.imagen-slplah {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  animation: fade 1.5s infinite;
+}
+
+.custom-spinner {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(1.5);
+  --color: #FFA500;
+  animation: fillSpinner 3s linear forwards; // Ajusta este tiempo al de tu splash
+}
+
+@keyframes fade {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.3;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fillSpinner {
+  0% {
+      transform: translateX(-50%) scale(1.5) rotate(0deg);
+  }
+  100% {
+      transform: translateX(-50%) scale(1.5) rotate(360deg);
+  }
+}
